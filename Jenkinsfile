@@ -3,14 +3,15 @@ pipeline {
         label 's6'
     }
     stages {
-        stage("GIT") {
+        stage("mvn") {
             steps {
-                git branch: 'feature', url: 'https://github.com/gopal-jogi/maven.git'
+                git branch: 'main', url: 'https://github.com/gopal-jogi/maven.git'
+		sh "mvn clean install"
             }
         }
-        stage("Run") {
+        stage("sh") {
             steps {
-                sh "mvn clean install"
+                git branch: 'feature', url: 'https://github.com/gopal-jogi/maven.git'
 		sh "sh script.sh"
             }
         }
