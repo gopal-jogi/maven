@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 's5'
+        label 's6'
     }
     stages {
         stage("GIT") {
