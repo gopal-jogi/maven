@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage("GIT") {
             steps {
-                git "https://github.com/gopal-jogi/Jenkins_practice.git"
+                git branch: 'main', url: 'https://github.com/gopal-jogi/maven.git'
             }
         }
         stage("Run") {
